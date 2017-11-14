@@ -1,0 +1,11 @@
+{
+    "name": "app-project",
+    "version": "1.0.0",
+    "description": "description project",
+    "author": {
+        "name": "author name",
+        "email": "mail@domain.com",
+        "url": "https://github.com/user"
+    },
+    "license": "MIT"
+}

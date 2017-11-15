@@ -21,14 +21,15 @@ $ npm install package-json-utils
 ```Javascript
 var pkg = require('package-json-utils');
 
+var getPackageJson = pkg.getPackageJson();
 var projectName = pkg.getProjectName();
-var projectName = pkg.getProjectName();
-var projectName = pkg.getProjectName();
-var projectName = pkg.getProjectName();
-var projectName = pkg.getProjectName();
-var projectName = pkg.getProjectName();
-var projectName = pkg.getProjectName();
-
+var getVersion = pkg.getVersion();
+var getDescription = pkg.getDescription();
+var getAuthor = pkg.getAuthor();
+var getEmail = pkg.getEmail();
+var getUsername = pkg.getUsername();
+var getLicense = pkg.getLicense();
+var getModuleName = pkg.getModuleName();
 ```
 
 [travis-image]: https://travis-ci.org/yadickson/package-json-utils.svg

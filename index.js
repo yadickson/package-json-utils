@@ -2,16 +2,11 @@
 
 const fs = require('file-system');
 const camelize = require('camelize');
-var path = require('path');
-var callerId = require('caller-id');
 
 function getPackageJson(filename) {
 
     if (!filename) {
         filename = './package.json';
-    } else if (!path.isAbsolute(filename)) {
-        var caller = callerId.getData();
-        filename = path.join(path.dirname(caller.filePath), filename);
     }
 
     var json = {};
@@ -61,6 +56,7 @@ function getModuleName(filename) {
 }
 
 module.exports = {
+    getPackageJson: getPackageJson,
     getProjectName: getProjectName,
     getVersion: getVersion,
     getDescription: getDescription,

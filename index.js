@@ -1,18 +1,25 @@
 'use strict'
 
 const fs = require('file-system');
+const os = require('os')
+
+function getFile(filename) {
+    return filename || './package.json';
+}
 
 function getPackageJson(filename) {
 
-    if (!filename) {
-        filename = './package.json';
-    }
+    filename = getFile(filename);
 
     var json = {};
 
     if (fs.existsSync(filename) && fs.statSync(filename).isFile()) {
-        var buffer = fs.readFileSync(filename);
-        json = JSON.parse(buffer.toString());
+        try {
+            var buffer = fs.readFileSync(filename);
+            json = JSON.parse(buffer.toString());
+        } catch (e) {
+            return {};
+        }
     }
 
     return json;
@@ -50,6 +57,49 @@ function getLicense(filename) {
     return getPackageJson(filename).license || 'GPL-3.0';
 }
 
+function setPackageJson(data, filename) {
+    data = JSON.stringify(data, null, 2);
+    fs.writeFileSync(filename, data + os.EOL);
+}
+
+function setProjectName(name, filename) {
+    var json = getPackageJson(filename);
+    json.name = name;
+    setPackageJson(json, filename);
+}
+
+function setVersion(version, filename) {
+    var json = getPackageJson(filename);
+    json.version = version;
+    setPackageJson(json, filename);
+}
+
+function setDescription(description, filename) {
+    var json = getPackageJson(filename);
+    json.description = description;
+    setPackageJson(json, filename);
+}
+
+function setAuthor(name, filename) {
+    var json = getPackageJson(filename);
+    json.author = json.author || {};
+    json.author.name = name;
+    setPackageJson(json, filename);
+}
+
+function setEmail(email, filename) {
+    var json = getPackageJson(filename);
+    json.author = json.author || {};
+    json.author.email = email;
+    setPackageJson(json, filename);
+}
+
+function setLicense(license, filename) {
+    var json = getPackageJson(filename);
+    json.license = license;
+    setPackageJson(json, filename);
+}
+
 module.exports = {
     getPackageJson: getPackageJson,
     getProjectName: getProjectName,
@@ -58,5 +108,12 @@ module.exports = {
     getAuthor: getAuthor,
     getEmail: getEmail,
     getUsername: getUsername,
-    getLicense: getLicense
+    getLicense: getLicense,
+    setPackageJson: setPackageJson,
+    setProjectName: setProjectName,
+    setVersion: setVersion,
+    setDescription: setDescription,
+    setAuthor: setAuthor,
+    setEmail: setEmail,
+    setLicense: setLicense
 };

@@ -51,6 +51,33 @@ var username = pkg.getUsername();
 // Get project license
 // "license": "GPL-3.0"
 var license = pkg.getLicense();
+
+// Write all package json string
+pkg.setPackageJson(json);
+
+// Set project name
+// "name": "new name"
+pkg.setProjectName('new name');
+
+// Set project version
+// "version": "new version"
+pkg.setVersion('new version');
+
+// Set project description
+// "description": "new description"
+pkg.setDescription('new description');
+
+// Set project author (author -> name)
+// "author" : { "name" : "new name" }
+pkg.setAuthor('new name');
+
+// Set project email (author -> email)
+// "author" : { "email" : "new email" }
+pkg.setEmail('new email');
+
+// Set project license
+// "license": "new license"
+pkg.setLicense('new license');
 ```
 
 [travis-image]: https://travis-ci.org/yadickson/package-json-utils.svg

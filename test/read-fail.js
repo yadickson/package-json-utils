@@ -1,10 +1,17 @@
 'use strict';
+
 const pkgUtils = require('..');
 const expect = require('chai').expect;
-const path = require('path');
+const mock = require('mock-fs');
 
-describe('Check pkgUtils with package.json', () => {
+describe('Check pkgUtils with mock-fs fail', () => {
     describe('Check package.json', () => {
+
+        beforeEach(function() {
+            mock({});
+        });
+
+        afterEach(mock.restore);
 
         it('Check name', () => {
             expect(pkgUtils.getProjectName('notfail')).to.be.undefined;

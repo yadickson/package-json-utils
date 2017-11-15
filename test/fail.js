@@ -34,9 +34,5 @@ describe('Check pkgUtils with package.json', () => {
             expect(pkgUtils.getLicense('notfail')).to.be.equal('GPL-3.0');
         });
 
-        it('Check appModule', () => {
-            expect(pkgUtils.getModuleName('notfail')).to.be.equal('appModule');
-        });
-
     });
 });

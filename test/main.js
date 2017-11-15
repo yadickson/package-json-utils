@@ -34,9 +34,5 @@ describe('Check pkgUtils with package.json', () => {
             expect(pkgUtils.getLicense(path.join(__dirname, 'package.json'))).to.be.equal('MIT');
         });
 
-        it('Check appModule', () => {
-            expect(pkgUtils.getModuleName(path.join(__dirname, 'package.json'))).to.be.equal('appProjectModule');
-        });
-
     });
 });

@@ -1,7 +1,6 @@
 'use strict'
 
 const fs = require('file-system');
-const camelize = require('camelize');
 
 function getPackageJson(filename) {
 
@@ -51,10 +50,6 @@ function getLicense(filename) {
     return getPackageJson(filename).license || 'GPL-3.0';
 }
 
-function getModuleName(filename) {
-    return camelize(getProjectName(filename) || 'app') + 'Module';
-}
-
 module.exports = {
     getPackageJson: getPackageJson,
     getProjectName: getProjectName,
@@ -63,6 +58,5 @@ module.exports = {
     getAuthor: getAuthor,
     getEmail: getEmail,
     getUsername: getUsername,
-    getLicense: getLicense,
-    getModuleName: getModuleName
+    getLicense: getLicense
 };

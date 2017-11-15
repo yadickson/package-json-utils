@@ -1,6 +1,6 @@
 {
   "name": "package-json-utils",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Read and update package.json files.",
   "main": "index.js",
   "scripts": {
@@ -12,7 +12,6 @@
   "author": "Yadickson Soto <yadickson@gmail.com>",
   "license": "GPL-3.0",
   "dependencies": {
-    "camelize": "^1.0.0",
     "file-system": "^2.2.2"
   },
   "devDependencies": {

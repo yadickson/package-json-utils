@@ -21,14 +21,36 @@ $ npm install package-json-utils
 ```Javascript
 var pkg = require('package-json-utils');
 
-var getPackageJson = pkg.getPackageJson();
+// Get all package json string
+var packageJson = pkg.getPackageJson();
+
+// Get project name
+// "name": "project name"
 var projectName = pkg.getProjectName();
-var getVersion = pkg.getVersion();
-var getDescription = pkg.getDescription();
-var getAuthor = pkg.getAuthor();
-var getEmail = pkg.getEmail();
-var getUsername = pkg.getUsername();
-var getLicense = pkg.getLicense();
+
+// Get project version
+// "version": "project version"
+var version = pkg.getVersion();
+
+// Get project description
+// "description": "project description"
+var description = pkg.getDescription();
+
+// Get project author (author -> name)
+// "author" : { "name" : "author name" }
+var author = pkg.getAuthor();
+
+// Get project email (author -> email)
+// "author" : { "email" : "author email" }
+var email = pkg.getEmail();
+
+// Get project github username (author -> url -> username)
+// "author" : { "url" : "https://github.com/username" }
+var username = pkg.getUsername();
+
+// Get project license
+// "license": "GPL-3.0"
+var license = pkg.getLicense();
 ```
 
 [travis-image]: https://travis-ci.org/yadickson/package-json-utils.svg

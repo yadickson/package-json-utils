@@ -10,10 +10,17 @@
 Read and update package.json files.
 
 ## Installation
-To install this module, you need to run the following command
 
+Simply run a install using your terminal and you're good to go!
+
+```bash
+npm install --save package-json-utils
 ```
-$ npm install package-json-utils
+
+If you're a cool kid using Yarn then simply just use yarn as you would
+
+```bash
+yarn add package-json-utils
 ```
 
 ## Usage
